@@ -1,0 +1,86 @@
+---
+import ProductCard from "./ui/ProductCard.astro"
+
+// Datos de los productos
+const products = [
+	{
+		image: "/heimer.png",
+		title: "Pasteles Artesanales",
+		description:
+			"Deliciosos pasteles hechos con ingredientes premium y decoraciones únicas.",
+		price: "Desde $25.000",
+		alt: "Pasteles Artesanales",
+	},
+	{
+		image: "/heimer.png",
+		title: "Macarons Franceses",
+		description:
+			"Exquisitos macarons en variedad de sabores y colores vibrantes.",
+		price: "Desde $3.500 c/u",
+		alt: "Macarons Franceses",
+	},
+	{
+		image: "/heimer.png",
+		title: "Cupcakes Gourmet",
+		description: "Pequeñas delicias perfectas para cualquier ocasión especial.",
+		price: "Desde $4.500 c/u",
+		alt: "Cupcakes Gourmet",
+	},
+	{
+		image: "/heimer.png",
+		title: "Pasteles de Boda",
+		description: "Creaciones elegantes para el día más especial de tu vida.",
+		price: "Desde $150.000",
+		alt: "Pasteles de Boda",
+	},
+	{
+		image: "/heimer.png",
+		title: "Pasteles de Cumpleaños",
+		description: "Diseños personalizados para celebrar cada año de vida.",
+		price: "Desde $35.000",
+		alt: "Pasteles de Cumpleaños",
+	},
+	{
+		image: "/heimer.png",
+		title: "Galletas Decoradas",
+		description: "Galletas artísticas perfectas como regalo o recuerdo.",
+		price: "Desde $2.500 c/u",
+		alt: "Galletas Decoradas",
+	},
+]
+---
+
+<section class="py-16 md:py-24 bg-pink-50">
+	<div class="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-72">
+		<!-- Encabezado -->
+		<div class="text-center mb-12 md:mb-16">
+			<h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-400 mb-4">
+				Nuestra Galería
+			</h2>
+			<p class="text-xl md:text-2xl text-gray-700 font-medium">
+				Descubre nuestras deliciosas creaciones
+			</p>
+		</div>
+
+		<!-- Grid de productos -->
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+			{
+				products.map((product) => (
+					<ProductCard
+						image={product.image}
+						title={product.title}
+						description={product.description}
+						price={product.price}
+						alt={product.alt}
+					/>
+				))
+			}
+		</div>
+
+		<!-- Elemento decorativo -->
+		<div class="flex justify-center mt-12 md:mt-16">
+			<div class="w-24 h-1 bg-pink-400 rounded-full"></div>
+		</div>
+	</div>
+</section>
+

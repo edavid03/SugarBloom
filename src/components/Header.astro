@@ -1,0 +1,304 @@
+---
+import Button from "./ui/Button.astro"
+---
+
+<header
+	class="relative flex flex-col justify-center w-screen min-h-screen overflow-hidden"
+>
+	<!-- Carrusel de fondo -->
+	<div class="absolute inset-0 w-full h-full">
+		<div class="relative w-full h-full" id="carousel">
+			<!-- Imagen 1 -->
+			<div
+				class="carousel-slide absolute inset-0 w-full h-full opacity-70 transition-opacity duration-1000"
+			>
+				<img
+					src="/chocolate.jpg"
+					alt="Chocolate"
+					class="w-full h-full object-cover"
+				/>
+			</div>
+			<!-- Imagen 2 -->
+			<div
+				class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000"
+			>
+				<img
+					src="/minecraft.jpg"
+					alt="Chocolate"
+					class="w-full h-full object-cover"
+				/>
+			</div>
+			<!-- Imagen 3 -->
+			<div
+				class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000"
+			>
+				<img
+					src="/rdr2.jpg"
+					alt="Chocolate"
+					class="w-full h-full object-cover"
+				/>
+			</div>
+		</div>
+		<!-- Overlay para mejorar legibilidad -->
+		<div class="absolute inset-0 bg-black/70"></div>
+	</div>
+
+	<!-- Navegación fija arriba -->
+	<nav
+		class="fixed top-0 left-0 w-full h-16 flex justify-between items-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-72 bg-white backdrop-blur-sm border-b border-gray-100 z-50"
+	>
+		<a href="/" class="text-xl md:text-2xl font-bold">Sugar Bloom</a>
+
+		<!-- Menú desktop -->
+		<ul class="hidden md:flex gap-4 lg:gap-6">
+			<li>
+				<a href="/" class="relative overflow-hidden group text-sm lg:text-base">
+					Inicio
+					<span
+						class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"
+					></span>
+				</a>
+			</li>
+			<li>
+				<a href="/" class="relative overflow-hidden group text-sm lg:text-base">
+					Nosotros
+					<span
+						class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"
+					></span>
+				</a>
+			</li>
+			<li>
+				<a href="/" class="relative overflow-hidden group text-sm lg:text-base">
+					Galería
+					<span
+						class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"
+					></span>
+				</a>
+			</li>
+			<li>
+				<a href="/" class="relative overflow-hidden group text-sm lg:text-base">
+					Servicios
+					<span
+						class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"
+					></span>
+				</a>
+			</li>
+			<li>
+				<a href="/" class="relative overflow-hidden group text-sm lg:text-base">
+					Pedidos
+					<span
+						class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"
+					></span>
+				</a>
+			</li>
+		</ul>
+
+		<!-- Menú móvil (hamburger) -->
+		<button class="md:hidden p-2" id="mobileMenuBtn">
+			<svg
+				class="w-6 h-6"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M4 6h16M4 12h16M4 18h16"></path>
+			</svg>
+		</button>
+	</nav>
+
+	<!-- Menú móvil desplegable -->
+	<div
+		id="mobileMenu"
+		class="fixed top-16 left-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-40 hidden"
+	>
+		<ul class="flex flex-col py-4">
+			<li><a href="/" class="block px-4 py-2 hover:bg-pink-50">Inicio</a></li>
+			<li><a href="/" class="block px-4 py-2 hover:bg-pink-50">Nosotros</a></li>
+			<li><a href="/" class="block px-4 py-2 hover:bg-pink-50">Galería</a></li>
+			<li>
+				<a href="/" class="block px-4 py-2 hover:bg-pink-50">Servicios</a>
+			</li>
+			<li><a href="/" class="block px-4 py-2 hover:bg-pink-50">Pedidos</a></li>
+		</ul>
+	</div>
+
+	<!-- Contenido principal -->
+	<div class="relative z-10 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-72 mt-16">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0">
+			<div class="flex flex-col gap-4 md:gap-6 lg:gap-8 lg:text-left">
+				<span
+					class="text-lg sm:text-xl md:text-2xl font-bold text-pink-400 -mb-4 md:-mb-6 lg:-mb-7"
+					>Bienvenidos a</span
+				>
+				<h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white">
+					Sugar<span class="text-pink-400">Bloom</span>
+				</h1>
+				<p
+					class="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl lg:mx-0 mb-10 md:mb-0"
+				>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ipsa
+					aliquam, ipsum similique illo officiis numquam iure, error veritatis
+					labore consequuntur, optio repellendus! Commodi itaque libero quos qui
+					ullam! Magnam expedita blanditiis accusamus aliquam odio.
+				</p>
+
+				<div
+					class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+				>
+					<Button
+						text="Nuestros servicios"
+						color="bg-pink-500 hover:bg-pink-600"
+						size="lg"
+					/>
+					<Button
+						text="Hacer Pedido"
+						variant="outline"
+						color="border-pink-500 text-pink-500 hover:bg-pink-500/20"
+						size="lg"
+					/>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Controles del carrusel -->
+	<div
+		class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+	>
+		<div class="flex gap-2 md:gap-4 items-center">
+			<button
+				id="prevBtn"
+				class="bg-white/80 hover:bg-white/90 rounded-full p-2 md:p-3 transition-all duration-300 shadow-lg"
+			>
+				<svg
+					class="w-4 h-4 md:w-6 md:h-6 text-pink-500"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M15 19l-7-7 7-7"></path>
+				</svg>
+			</button>
+
+			<div class="flex gap-1 md:gap-2">
+				<button
+					class="carousel-dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-pink-500 transition-all duration-300"
+					data-slide="0"></button>
+				<button
+					class="carousel-dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-white/50 transition-all duration-300"
+					data-slide="1"></button>
+				<button
+					class="carousel-dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-white/50 transition-all duration-300"
+					data-slide="2"></button>
+			</div>
+
+			<button
+				id="nextBtn"
+				class="bg-white/80 hover:bg-white/90 rounded-full p-2 md:p-3 transition-all duration-300 shadow-lg"
+			>
+				<svg
+					class="w-4 h-4 md:w-6 md:h-6 text-pink-500"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M9 5l7 7-7 7"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+</header>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		let currentSlide = 0
+		let autoPlayInterval: ReturnType<typeof setInterval>
+		const slides = document.querySelectorAll(
+			".carousel-slide"
+		) as NodeListOf<HTMLElement>
+		const dots = document.querySelectorAll(".carousel-dot")
+		const prevBtn = document.getElementById("prevBtn")
+		const nextBtn = document.getElementById("nextBtn")
+		const mobileMenuBtn = document.getElementById("mobileMenuBtn")
+		const mobileMenu = document.getElementById("mobileMenu")
+
+		function showSlide(n: number) {
+			slides.forEach((slide, index) => {
+				if (slide instanceof HTMLElement) {
+					slide.style.opacity = index === n ? "0.7" : "0"
+				}
+			})
+
+			dots.forEach((dot, index) => {
+				if (index === n) {
+					dot.classList.remove("bg-white/50")
+					dot.classList.add("bg-pink-500")
+				} else {
+					dot.classList.remove("bg-pink-500")
+					dot.classList.add("bg-white/50")
+				}
+			})
+		}
+
+		function nextSlide() {
+			currentSlide = (currentSlide + 1) % slides.length
+			showSlide(currentSlide)
+		}
+
+		function prevSlide() {
+			currentSlide = (currentSlide - 1 + slides.length) % slides.length
+			showSlide(currentSlide)
+		}
+
+		function resetAutoPlay() {
+			if (autoPlayInterval) {
+				clearInterval(autoPlayInterval)
+			}
+			autoPlayInterval = setInterval(nextSlide, 4000)
+		}
+
+		// Event listeners para carrusel
+		if (nextBtn) {
+			nextBtn.addEventListener("click", () => {
+				nextSlide()
+				resetAutoPlay()
+			})
+		}
+		if (prevBtn) {
+			prevBtn.addEventListener("click", () => {
+				prevSlide()
+				resetAutoPlay()
+			})
+		}
+
+		dots.forEach((dot, index) => {
+			dot.addEventListener("click", () => {
+				currentSlide = index
+				showSlide(currentSlide)
+				resetAutoPlay()
+			})
+		})
+
+		// Event listener para menú móvil
+		if (mobileMenuBtn && mobileMenu) {
+			mobileMenuBtn.addEventListener("click", () => {
+				mobileMenu.classList.toggle("hidden")
+			})
+		}
+
+		// Iniciar auto-play
+		resetAutoPlay()
+	})
+</script>

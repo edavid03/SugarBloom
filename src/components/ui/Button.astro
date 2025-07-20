@@ -1,0 +1,44 @@
+---
+export interface Props {
+	text: string
+	onClick?: string
+	color?: string
+	variant?: "solid" | "outline" | "ghost"
+	size?: "sm" | "md" | "lg"
+	disabled?: boolean
+	class?: string
+}
+
+const {
+	text,
+	onClick,
+	color = "bg-blue-500 hover:bg-blue-600",
+	variant = "solid",
+	size = "md",
+	disabled = false,
+	class: className = "",
+} = Astro.props
+
+// Definir clases base según el variant
+const variantClasses = {
+	solid: `${color} text-white`,
+	outline: `border-2 ${color}`,
+	ghost: `text-current hover:bg-gray-100`,
+}
+
+// Definir tamaños
+const sizeClasses = {
+	sm: "px-3 py-1.5 text-sm",
+	md: "px-4 py-2 text-base",
+	lg: "px-6 py-3 text-lg",
+}
+
+// Construir clases finales
+const baseClasses =
+	"inline-flex cursor-pointer items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+const finalClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`
+---
+
+<button class={finalClasses} onclick={onClick} disabled={disabled}>
+	{text}
+</button>

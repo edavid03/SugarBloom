@@ -1,0 +1,79 @@
+---
+import ServiceCard from "./ui/ServiceCard.astro"
+import { Cake, Heart, Truck, BookOpen, Gift, Utensils } from "@lucide/astro"
+
+// Datos de los servicios
+const services = [
+	{
+		icon: Cake,
+		title: "Pasteles Personalizados",
+		description:
+			"Diseñamos y creamos pasteles únicos según tus gustos y necesidades. Cada detalle es cuidadosamente planificado para hacer realidad tu visión.",
+	},
+	{
+		icon: Heart,
+		title: "Eventos Especiales",
+		description:
+			"Bodas, quinceañeras, bautizos y más. Nos encargamos de endulzar tus celebraciones más importantes con nuestras creaciones artesanales.",
+	},
+	{
+		icon: Truck,
+		title: "Entrega a Domicilio",
+		description:
+			"Llevamos nuestros dulces directamente a tu puerta. Servicio de entrega seguro y puntual en toda la ciudad.",
+	},
+	{
+		icon: BookOpen,
+		title: "Clases de Repostería",
+		description:
+			"Aprende las técnicas profesionales de repostería con nuestros talleres personalizados para principiantes y avanzados.",
+	},
+	{
+		icon: Gift,
+		title: "Cajas de Regalo",
+		description:
+			"Sorprende a tus seres queridos con nuestras hermosas cajas de regalo llenas de dulces artesanales cuidadosamente seleccionados.",
+	},
+	{
+		icon: Utensils,
+		title: "Catering Dulce",
+		description:
+			"Mesa de postres completa para tus eventos corporativos o familiares. Variedad de opciones para satisfacer todos los gustos.",
+	},
+]
+---
+
+<section class="py-16 md:py-24 bg-white">
+	<div class="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-72">
+		<!-- Encabezado -->
+		<div class="text-center mb-12 md:mb-16">
+			<h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-400 mb-4">
+				Nuestros Servicios
+			</h2>
+			<p
+				class="text-xl md:text-2xl text-gray-700 font-medium max-w-3xl mx-auto"
+			>
+				Todo lo que necesitas para endulzar tus momentos especiales
+			</p>
+		</div>
+
+		<!-- Grid de servicios -->
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+			{
+				services.map((service) => (
+					<ServiceCard
+						icon={service.icon}
+						title={service.title}
+						description={service.description}
+					/>
+				))
+			}
+		</div>
+
+		<!-- Elemento decorativo -->
+		<div class="flex justify-center mt-12 md:mt-16">
+			<div class="w-24 h-1 bg-pink-400 rounded-full"></div>
+		</div>
+	</div>
+</section>
+

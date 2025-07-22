@@ -7,4 +7,8 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
 	},
+
+	build: {
+		assets: 'assets', // Esto cambia la carpeta de assets
+	  },
 })

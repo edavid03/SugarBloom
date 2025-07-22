@@ -1,36 +1,35 @@
 ---
 export interface Props {
-	icon: any
-	title: string
-	description: string
+  icon: any
+  title: string
+  description: string
 }
 
 const { icon: Icon, title, description } = Astro.props
 ---
 
 <div
-	class="bg-pink-50 rounded-2xl p-6 md:p-8 text-center group hover:bg-pink-100 transition-all duration-300 hover:shadow-lg"
+  class="bg-pink-50 rounded-2xl p-6 md:p-8 text-center group hover:bg-pink-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 transform-gpu"
 >
-	<!-- Ícono circular -->
-	<div class="flex justify-center mb-6">
-		<div
-			class="w-16 h-16 md:w-20 md:h-20 bg-pink-400 rounded-full flex items-center justify-center group-hover:bg-pink-500 transition-colors duration-300"
-		>
-			<Icon class="w-8 h-8 md:w-10 md:h-10 text-white" stroke-width="2" />
-		</div>
-	</div>
+  <!-- Ícono circular con animación -->
+  <div class="flex justify-center mb-6">
+    <div
+      class="w-16 h-16 md:w-20 md:h-20 bg-pink-400 rounded-full flex items-center justify-center group-hover:bg-pink-500 transition-all duration-300 group-hover:scale-105 transform-gpu"
+    >
+      <Icon class="w-8 h-8 md:w-10 md:h-10 text-white group-hover:scale-110 transition-transform duration-300" stroke-width="2" />
+    </div>
+  </div>
 
-	<!-- Contenido -->
-	<div class="space-y-4">
-		<h3
-			class="text-xl md:text-2xl font-bold text-pink-400 group-hover:text-pink-500 transition-colors duration-300"
-		>
-			{title}
-		</h3>
+  <!-- Contenido con animaciones -->
+  <div class="space-y-4 transform-gpu">
+    <h3
+      class="text-xl md:text-2xl font-bold text-pink-400 group-hover:text-pink-500 transition-colors duration-300 group-hover:scale-[1.02] transform-gpu"
+    >
+      {title}
+    </h3>
 
-		<p class="text-gray-600 text-sm md:text-base leading-relaxed">
-			{description}
-		</p>
-	</div>
+    <p class="text-gray-600 text-sm md:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+      {description}
+    </p>
+  </div>
 </div>
-

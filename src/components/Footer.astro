@@ -3,11 +3,11 @@ import {
 	Facebook,
 	Instagram,
 	Music,
-	Youtube,
+
 	MapPin,
 	Phone,
 	Mail,
-	Clock,
+	Clock, 
 } from "@lucide/astro"
 
 // Obtener el año actual dinámicamente
@@ -18,8 +18,7 @@ const services = [
 	"Pasteles Personalizados",
 	"Eventos Especiales",
 	"Entrega a Domicilio",
-	"Clases de Repostería",
-	"Catering Dulce",
+
 ]
 ---
 
@@ -48,11 +47,7 @@ const services = [
 				<!-- Logo -->
 				<div class="space-y-4">
 					<div class="flex items-center gap-2 justify-center md:justify-start">
-						<img
-							src="/favicon.svg"
-							alt="SugarBloom Logo"
-							class="w-8 h-8 md:w-10 md:h-10"
-						/>
+						
 						<span class="text-xl md:text-2xl font-bold text-white"
 							>SugarBloom</span
 						>
@@ -60,44 +55,30 @@ const services = [
 					<p
 						class="text-gray-300 text-sm md:text-base leading-relaxed max-w-xs mx-auto md:mx-0"
 					>
-						Endulzando momentos especiales desde 2015
+						Endulzando momentos especiales
 					</p>
 				</div>
 
 				<!-- Redes sociales -->
 				<div class="space-y-4">
 					<div class="flex gap-3 justify-center md:justify-start">
+						
 						<a
-							href="https://facebook.com"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="w-10 h-10 md:w-12 md:h-12 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-pink-500/25"
-						>
-							<Facebook class="w-5 h-5 md:w-6 md:h-6 text-white" />
-						</a>
-						<a
-							href="https://instagram.com"
+							href="https://www.instagram.com/sugarrbloom.sc/"
 							target="_blank"
 							rel="noopener noreferrer"
 							class="w-10 h-10 md:w-12 md:h-12 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-pink-500/25"
 						>
 							<Instagram class="w-5 h-5 md:w-6 md:h-6 text-white" />
 						</a>
+						
 						<a
-							href="https://tiktok.com"
+							href="https://wa.me/+584126539866?text=¡Hola!%20Me%20interesa%20hacer%20un%20pedido%20en%20SugarBloom%20🍰🎂❤️"
 							target="_blank"
 							rel="noopener noreferrer"
 							class="w-10 h-10 md:w-12 md:h-12 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-pink-500/25"
 						>
-							<Music class="w-5 h-5 md:w-6 md:h-6 text-white" />
-						</a>
-						<a
-							href="https://youtube.com"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="w-10 h-10 md:w-12 md:h-12 bg-pink-500 hover:bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-pink-500/25"
-						>
-							<Youtube class="w-5 h-5 md:w-6 md:h-6 text-white" />
+							<Phone class="w-5 h-5 md:w-6 md:h-6 text-white" />
 						</a>
 					</div>
 				</div>
@@ -111,7 +92,7 @@ const services = [
 						services.map((service) => (
 							<li>
 								<a
-									href="#"
+								
 									class="text-gray-300 hover:text-pink-400 transition-all duration-300 text-sm md:text-base block py-1 hover:translate-x-1"
 								>
 									{service}
@@ -132,7 +113,7 @@ const services = [
 							<MapPin class="w-full h-full text-pink-400" />
 						</div>
 						<p class="text-gray-300 text-sm md:text-base">
-							Calle 123 #45-67, Bogotá
+							San Cristóbal, Táchira, Venezuela.
 						</p>
 					</div>
 
@@ -142,10 +123,10 @@ const services = [
 							<Phone class="w-full h-full text-pink-400" />
 						</div>
 						<a
-							href="tel:+573001234567"
+							href="tel:+584126539866"
 							class="text-gray-300 hover:text-pink-400 transition-all duration-300 text-sm md:text-base hover:translate-x-1"
 						>
-							+57 300 123 4567
+							+58 412 653 9866
 						</a>
 					</div>
 
@@ -155,10 +136,10 @@ const services = [
 							<Mail class="w-full h-full text-pink-400" />
 						</div>
 						<a
-							href="mailto:info@sugarbloom.com"
+							href="ajaimescastaneda@gmail.com"
 							class="text-gray-300 hover:text-pink-400 transition-all duration-300 text-sm md:text-base hover:translate-x-1"
 						>
-							info@sugarbloom.com
+						ajaimescastaneda@gmail.com
 						</a>
 					</div>
 
@@ -168,7 +149,7 @@ const services = [
 							<Clock class="w-full h-full text-pink-400" />
 						</div>
 						<p class="text-gray-300 text-sm md:text-base">
-							Lun - Sáb: 8:00 AM - 8:00 PM
+							Disponible 24/7
 						</p>
 					</div>
 				</div>

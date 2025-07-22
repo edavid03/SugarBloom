@@ -2,287 +2,111 @@
 import Button from "./ui/Button.astro";
 ---
 
-	<!-- Navegación fija arriba -->
-	<nav
-		class="fixed top-0 left-0 w-full h-16 flex justify-between items-center px-4 sm:px-8 md:px-16 lg:px-32 xl:px-72 bg-white backdrop-blur-sm border-b border-gray-100 z-50"
-	>
-
+<!-- Navegación fija arriba -->
+<nav class="fixed top-0 left-0 w-full h-16 flex justify-between items-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
     <a href="https://www.instagram.com/sugarrbloom.sc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
-        <img
-        src="/png.png"
-        alt="Logo SugarBloom"
-        width="150"
-    />
+        <img src="/png.png" alt="Logo SugarBloom" class="w-24 md:w-32 lg:w-36" />
     </a>
-		
-		<!-- Menú desktop -->
-		<ul class="hidden md:flex gap-4 lg:gap-6">
-			<li>
-				<a href="#inicio" class="relative overflow-hidden group text-sm lg:text-base">
-					Inicio
-					<span
-						class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"
-					></span>
-				</a>
-			</li>
-			<li>
-				<a href="#nosotros" class="relative overflow-hidden group text-sm lg:text-base">
-					Nosotros
-					<span
-						class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"
-					></span>
-				</a>
-			</li>
-			<li>
-				<a href="#galeria" class="relative overflow-hidden group text-sm lg:text-base">
-					Galería
-					<span
-						class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"
-					></span>
-				</a>
-			</li>
-			<li>
-				<a href="#servicios" class="relative overflow-hidden group text-sm lg:text-base">
-					Servicios
-					<span
-						class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"
-					></span>
-				</a>
-			</li>
-			<li>
-				<a href="#pedidos" class="relative overflow-hidden group text-sm lg:text-base">
-					Pedidos
-					<span
-						class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"
-					></span>
-				</a>
-			</li>
-		</ul>
+    
+    <!-- Menú desktop -->
+    <ul class="hidden md:flex gap-4 lg:gap-6">
+        <li>
+            <a href="#inicio" class="relative overflow-hidden group text-sm lg:text-base">
+                Inicio
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#nosotros" class="relative overflow-hidden group text-sm lg:text-base">
+                Nosotros
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#galeria" class="relative overflow-hidden group text-sm lg:text-base">
+                Galería
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#servicios" class="relative overflow-hidden group text-sm lg:text-base">
+                Servicios
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#pedidos" class="relative overflow-hidden group text-sm lg:text-base">
+                Pedidos
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-400 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+        </li>
+    </ul>
 
-		<!-- Menú móvil (hamburger) -->
-		<button class="md:hidden p-2" id="mobileMenuBtn">
-			<svg
-				class="w-6 h-6"
-				fill="none"
-				stroke="currentColor"
-				viewBox="0 0 24 24"
-			>
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					d="M4 6h16M4 12h16M4 18h16"></path>
-			</svg>
-		</button>
-	</nav>
+    <!-- Menú móvil (hamburger) -->
+    <button class="md:hidden p-2" id="mobileMenuBtn" aria-label="Menú móvil">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+</nav>
 
-	<!-- Menú móvil desplegable -->
-	<div
-		id="mobileMenu"
-		class="fixed top-16 left-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-40 hidden"
-	>
-		<ul class="flex flex-col py-4">
-			<li><a href="/" class="block px-4 py-2 hover:bg-pink-50">Inicio</a></li>
-			<li><a href="/" class="block px-4 py-2 hover:bg-pink-50">Nosotros</a></li>
-			<li><a href="/" class="block px-4 py-2 hover:bg-pink-50">Galería</a></li>
-			<li>
-				<a href="/" class="block px-4 py-2 hover:bg-pink-50">Servicios</a>
-			</li>
-			<li><a href="/" class="block px-4 py-2 hover:bg-pink-50">Pedidos</a></li>
-		</ul>
-	</div>
+<!-- Menú móvil desplegable -->
+<div id="mobileMenu" class="fixed top-16 left-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-40 hidden">
+    <ul class="flex flex-col py-2">
+        <li><a href="#inicio" class="block px-4 py-3 hover:bg-pink-50 transition-colors">Inicio</a></li>
+        <li><a href="#nosotros" class="block px-4 py-3 hover:bg-pink-50 transition-colors">Nosotros</a></li>
+        <li><a href="#galeria" class="block px-4 py-3 hover:bg-pink-50 transition-colors">Galería</a></li>
+        <li><a href="#servicios" class="block px-4 py-3 hover:bg-pink-50 transition-colors">Servicios</a></li>
+        <li><a href="#pedidos" class="block px-4 py-3 hover:bg-pink-50 transition-colors">Pedidos</a></li>
+    </ul>
+</div>
 
-	<!-- Contenido principal -->
-	<header class="header" id="inicio">
-        <div class="carousel-container">
-            <div class="carousel-slide active" style="background-image: url('/wallpaper3.jpg')">
-                <div class="slide-content">
-                    <h1>Bienvenidos a SugarBloom</h1>
-                    <p>Endulzamos tus momentos más especiales con nuestras creaciones artesanales</p>
-                    <a href="#pedidos" class="cta-button">Haz tu Pedido</a>
-                </div>
-            </div>
+<!-- Contenido principal -->
 
-            <div class="carousel-slide" style="background-image: url('wallpaper5.jpg')">
-                <div class="slide-content">
-                    <h1>Tortas Personalizadas</h1>
-                    <p>Diseños únicos para cada ocasión especial. Tu imaginación es nuestro límite</p>
-                    <a href="#galeria" class="cta-button">Ver Galería</a>
-                </div>
-            </div>
-
-            <div class="carousel-slide" style="background-image: url('wallpaper4.jpg')">
-                <div class="slide-content">
-                    <h1>Mesas Dulces</h1>
-                    <p>Perfectas para bodas, cumpleaños y eventos sociales. Hacemos realidad tus sueños</p>
-                    <a href="#servicios" class="cta-button">Nuestros Servicios</a>
-                </div>
+<!-- Contenido principal -->
+<header class="mt-16 w-full h-[calc(100vh-4rem)] relative overflow-hidden">
+    <div class="w-full h-full">
+        <!-- Slide 1 -->
+        <div id="slide1" class="absolute inset-0 w-full h-full flex items-center justify-center opacity-0 transition-opacity duration-500 ease-in-out bg-cover bg-center" style="background-image: url('/wallpaper3.jpg')">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="text-center w-11/12 sm:max-w-md md:max-w-lg px-4 py-6 sm:px-6 sm:py-8 bg-black/20 rounded-xl backdrop-blur-sm z-10 relative mx-auto">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg">Bienvenidos a SugarBloom</h1>
+                <p class="text-white text-sm sm:text-base mb-4 sm:mb-6 drop-shadow">Endulzamos tus momentos más especiales con nuestras creaciones artesanales</p>
+                <a href="#pedidos" class="inline-block bg-white text-pink-500 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm hover:bg-pink-500 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">Haz tu Pedido</a>
             </div>
         </div>
 
-        <div class="carousel-controls">
-            <button class="carousel-btn prev">‹</button>
-            <button class="carousel-btn next">›</button>
+        <!-- Slide 2 -->
+        <div id="slide2" class="absolute inset-0 w-full h-full flex items-center justify-center opacity-0 transition-opacity duration-500 ease-in-out bg-cover bg-center" style="background-image: url('wallpaper5.jpg')">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="text-center w-11/12 sm:max-w-md md:max-w-lg px-4 py-6 sm:px-6 sm:py-8 bg-black/20 rounded-xl backdrop-blur-sm z-10 relative mx-auto">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg">Tortas Personalizadas</h1>
+                <p class="text-white text-sm sm:text-base mb-4 sm:mb-6 drop-shadow">Diseños únicos para cada ocasión especial</p>
+                <a href="#galeria" class="inline-block bg-white text-pink-500 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm hover:bg-pink-500 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">Ver Galería</a>
+            </div>
         </div>
-	</header>
 
-	<style>
-/* Header Carousel */
-.header {
-    margin-top: 55px; /* Compensa la altura del navbar */
-    width: 100%;
-    height: calc(100vh - 55px); /* 100% del viewport menos navbar */
-    position: relative;
-    overflow: hidden;
-}
+        <!-- Slide 3 -->
+        <div id="slide3" class="absolute inset-0 w-full h-full flex items-center justify-center opacity-0 transition-opacity duration-500 ease-in-out bg-cover bg-center" style="background-image: url('wallpaper4.jpg')">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="text-center w-11/12 sm:max-w-md md:max-w-lg px-4 py-6 sm:px-6 sm:py-8 bg-black/20 rounded-xl backdrop-blur-sm z-10 relative mx-auto">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg">Mesas Dulces</h1>
+                <p class="text-white text-sm sm:text-base mb-4 sm:mb-6 drop-shadow">Perfectas para bodas, cumpleaños y eventos sociales</p>
+                <a href="#servicios" class="inline-block bg-white text-pink-500 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm hover:bg-pink-500 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">Nuestros Servicios</a>
+            </div>
+        </div>
+    </div>
 
-.carousel-container {
-    width: 100%;
-    height: 100%;
-}
-  
-.carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-slide::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-}
-
-.slide-content {
-    text-align: center;
-    color: white;
-    max-width: 600px;
-    padding: 2rem;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    z-index: 1;
-    position: relative;
-}
-
-.slide-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.slide-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.carousel-slide.active {
-    opacity: 1;
-}
-
-.cta-button {
-    background: white;
-    color: #fd3eab;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 20px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-  
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    background: #f177bd;
-    color: white;
-}
-  
-.carousel-controls {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 2.5rem;
-    padding: 1rem 2rem;
-    z-index: 10;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-}
-
-.carousel-btn {
-    width: 38px;
-    height: 38px;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.3rem;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    backdrop-filter: blur(12px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 
-        0 4px 6px rgba(0, 0, 0, 0.1),
-        inset 0 1px 1px rgba(255, 255, 255, 0.2);
-}
-
-.carousel-btn:hover {
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--primary-pink);
-    transform: scale(1.15) translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 
-        0 6px 12px rgba(0, 0, 0, 0.15),
-        inset 0 1px 2px rgba(255, 255, 255, 0.3);
-}
-
-.carousel-btn:active {
-    transform: scale(0.98) translateY(0);
-    transition: all 0.2s ease;
-}
-
-/* Efecto de onda al hacer clic */
-.carousel-btn::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    z-index: -1;
-    transform: scale(0);
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.carousel-btn:hover::after {
-    transform: scale(1.4);
-    opacity: 1;
-}
-	</style>
+    <!-- Controles del carrusel -->
+    <div class="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-6 sm:gap-8 px-4 py-2 z-10 drop-shadow-md">
+        <button class="carousel-btn prev w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full border-2 border-white/80 bg-white/15 text-white text-lg sm:text-xl backdrop-blur-sm transition-all duration-300 hover:bg-white/90 hover:text-pink-500 hover:scale-110 hover:border-white/95 shadow hover:shadow-md">
+            ‹
+        </button>
+        <button class="carousel-btn next w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full border-2 border-white/80 bg-white/15 text-white text-lg sm:text-xl backdrop-blur-sm transition-all duration-300 hover:bg-white/90 hover:text-pink-500 hover:scale-110 hover:border-white/95 shadow hover:shadow-md">
+            ›
+        </button>
+    </div>
+</header>
 
 <script is:inline>
 // Menú móvil
@@ -295,14 +119,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Carrusel
-    const slides = document.querySelectorAll('.carousel-slide');
+    const slides = [
+        document.getElementById('slide1'),
+        document.getElementById('slide2'),
+        document.getElementById('slide3')
+    ];
     const prevBtn = document.querySelector('.carousel-btn.prev');
     const nextBtn = document.querySelector('.carousel-btn.next');
     let currentSlide = 0;
     
     function showSlide(index) {
         slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
+            slide.style.opacity = i === index ? '1' : '0';
         });
     }
     
@@ -320,11 +148,14 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', previousSlide);
     
+    // Mostrar el primer slide al cargar
+    showSlide(0);
+    
     // Autoavance del carrusel (opcional)
     let slideInterval = setInterval(nextSlide, 5000);
     
     // Pausar al interactuar
-    const carousel = document.querySelector('.carousel-container');
+    const carousel = document.querySelector('header');
     carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
     carousel.addEventListener('mouseleave', () => {
         slideInterval = setInterval(nextSlide, 5000);

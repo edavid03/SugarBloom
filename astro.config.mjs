@@ -11,4 +11,8 @@ export default defineConfig({
 	build: {
 		assets: 'assets', // Esto cambia la carpeta de assets
 	  },
+
+	  export default defineConfig({
+		base: '/sugarbloom/', // Ajusta esto según tu ruta
+	  });
 })

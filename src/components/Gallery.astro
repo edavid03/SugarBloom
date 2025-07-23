@@ -1,129 +1,106 @@
 ---
 import ProductCard from "./ui/ProductCard.astro"
 
-// Datos de los productos
+// Datos de los productos (podría moverse a un archivo aparte para mejor organización)
 const products = [
   {
-    image: "/Gallery-Cake.jpeg",
-    title: "Pasteles Artesanales",
-    description: "Deliciosos pasteles hechos con ingredientes premium y decoraciones únicas.",
+    image: "/galery1.jpeg",
+    title: "Postres",
+    description: "Delicias dulces con texturas y sabores pensados para enamorar.",
     price: "Desde $25.000",
-    alt: "Pasteles Artesanales",
+    alt: "Postres",
   },
   {
-    image: "/heimer.png",
-    title: "Macarons Franceses",
-    description: "Exquisitos macarons en variedad de sabores y colores vibrantes.",
+    image: "/gallery2.jpeg",
+    title: "Tortas",
+    description: "Suaves, esponjosas y con sabores que se disfrutan en cualquier ocasión.",
     price: "Desde $3.500 c/u",
-    alt: "Macarons Franceses",
+    alt: "Tortas",
   },
   {
-    image: "/heimer.png",
-    title: "Cupcakes Gourmet",
-    description: "Pequeñas delicias perfectas para cualquier ocasión especial.",
+    image: "/gallery3.jpeg",
+    title: "Tortas Personalizadas",
+    description: "Diseños únicos y deliciosos, hechos a la medida de tus momentos especiales.",
     price: "Desde $4.500 c/u",
-    alt: "Cupcakes Gourmet",
+    alt: "Tortas Personalizadas",
   },
   {
-    image: "/heimer.png",
-    title: "Pasteles de Boda",
-    description: "Creaciones elegantes para el día más especial de tu vida.",
+    image: "/gallery4.jpeg",
+    title: "Postres en shot",
+    description: "Presentaciones elegantes con capas irresistibles y mucho sabor.",
     price: "Desde $150.000",
-    alt: "Pasteles de Boda",
+    alt: "Postres en shot",
   },
   {
-    image: "/heimer.png",
-    title: "Pasteles de Cumpleaños",
-    description: "Diseños personalizados para celebrar cada año de vida.",
+    image: "/gallery5.jpeg",
+    title: "Cupcakes",
+    description: "Pequeños, encantadores y con todo el sabor que esperas de una buena torta.",
     price: "Desde $35.000",
-    alt: "Pasteles de Cumpleaños",
+    alt: "Cupcakes",
   },
   {
-    image: "/heimer.png",
-    title: "Galletas Decoradas",
-    description: "Galletas artísticas perfectas como regalo o recuerdo.",
+    image: "/gallery6.jpeg",
+    title: "Pies",
+    description: "Base crujiente, rellenos cremosos y sabores que encantan en cada bocado.",
     price: "Desde $2.500 c/u",
-    alt: "Galletas Decoradas",
+    alt: "Pies",
   },
 ]
-
-// Función para dividir los productos en filas de 3
-const rows = [];
-for (let i = 0; i < products.length; i += 3) {
-  rows.push(products.slice(i, i + 3));
-}
 ---
 
-<section class="py-16 md:py-24 bg-pink-50 scroll-section" id="galeria">
-  <div class="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-72">
+<!-- Sección principal -->
+<section class="py-12 md:py-20 bg-pink-50 scroll-section" id="galeria">
+  <div class="container px-4 sm:px-6 md:px-10 lg:px-20 xl:px-32 2xl:px-48 mx-auto">
+    
     <!-- Encabezado -->
-    <div class="text-center mb-12 md:mb-16">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-400 mb-4 opacity-0 translate-y-10 transition-all duration-500 ease-out [.in-viewport_&]:opacity-100 [.in-viewport_&]:translate-y-0">
+    <header class="text-center mb-10 md:mb-14">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-400 mb-3 sm:mb-4 opacity-0 translate-y-10 transition-all duration-500 ease-out [.in-viewport_&]:opacity-100 [.in-viewport_&]:translate-y-0">
         Nuestra Galería
       </h2>
-      <p class="text-xl md:text-2xl text-gray-700 font-medium opacity-0 translate-y-10 transition-all duration-500 ease-out delay-100 [.in-viewport_&]:opacity-100 [.in-viewport_&]:translate-y-0">
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium opacity-0 translate-y-10 transition-all duration-500 ease-out delay-100 [.in-viewport_&]:opacity-100 [.in-viewport_&]:translate-y-0">
         Descubre nuestras deliciosas creaciones
       </p>
+    </header>
+
+    <!-- Grid de productos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+      {products.map((product, index) => (
+        <ProductCard
+          class:list={[
+            'opacity-0 translate-y-10 transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]',
+            'hover:scale-[1.02] hover:shadow-xl',
+            '[.in-viewport_&]:opacity-100 [.in-viewport_&]:translate-y-0',
+            `[.in-viewport_&]:delay-[${index * 100}ms]`
+          ]}
+          image={product.image}
+          title={product.title}
+          description={product.description}
+          price={product.price}
+          alt={product.alt}
+        />
+      ))}
     </div>
 
-    <!-- Grid de productos por filas -->
-    <div class="space-y-6 md:space-y-8">
-      {
-        rows.map((row, rowIndex) => (
-          <div 
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-            class:list={[
-              '[&>*]:opacity-0 [&>*]:translate-y-10',
-              '[.in-viewport_&>*]:opacity-100 [.in-viewport_&>*]:translate-y-0',
-              rowIndex % 2 === 0 ? '[.in-viewport_&>*]:delay-[200ms]' : '[.in-viewport_&>*]:delay-[400ms]'
-            ]}
-          >
-            {row.map((product, index) => (
-              <ProductCard
-                class:list={[
-                  'transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]',
-                  'hover:scale-[1.02] hover:shadow-xl',
-                  `[.in-viewport_&]:delay-[${index * 100}ms]`
-                ]}
-                image={product.image}
-                title={product.title}
-                description={product.description}
-                price={product.price}
-                alt={product.alt}
-              />
-            ))}
-          </div>
-        ))
-      }
-    </div>
-
-    <!-- Elemento decorativo -->
-    <div class="flex justify-center mt-12 md:mt-16 opacity-0 transition-all duration-500 ease-out delay-700 [.in-viewport_&]:opacity-100">
-      <div class="w-24 h-1 bg-pink-400 rounded-full"></div>
+    <!-- Separador decorativo -->
+    <div class="flex justify-center mt-10 md:mt-14 opacity-0 transition-all duration-500 ease-out delay-700 [.in-viewport_&]:opacity-100">
+      <div class="w-20 sm:w-24 h-1 bg-pink-400 rounded-full"></div>
     </div>
   </div>
 </section>
 
+<!-- Script de animación -->
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Configuración del Intersection Observer
-    const scrollSections = document.querySelectorAll('.scroll-section');
-    
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    };
-    
+  document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-viewport');
-          observer.unobserve(entry.target);
-        }
+        entry.target.classList.toggle('in-viewport', entry.isIntersecting);
       });
-    }, observerOptions);
+    }, {
+      threshold: 0.05,
+      rootMargin: '0px 0px -50px 0px'
+    });
     
-    scrollSections.forEach(section => {
+    document.querySelectorAll('.scroll-section').forEach(section => {
       observer.observe(section);
     });
   });

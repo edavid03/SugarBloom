@@ -9,6 +9,7 @@ const products = [
     description: "Delicias dulces con texturas y sabores pensados para enamorar.",
     price: "Desde $25.000",
     alt: "Postres",
+    message: "Hola! Me gustaría hacer un pedido de postres en Sugarr Bloom, ¿podrías contarme cuáles están disponibles?",
   },
   {
     image: "/gallery2.jpeg",
@@ -16,6 +17,7 @@ const products = [
     description: "Suaves, esponjosas y con sabores que se disfrutan en cualquier ocasión.",
     price: "Desde $3.500 c/u",
     alt: "Tortas",
+    message: "Hola! Quisiera pedir una torta en Sugarr Bloom y me encantaría conocer las opciones de sabores y tamaños."
   },
   {
     image: "/gallery3.jpeg",
@@ -23,6 +25,7 @@ const products = [
     description: "Diseños únicos y deliciosos, hechos a la medida de tus momentos especiales.",
     price: "Desde $4.500 c/u",
     alt: "Tortas Personalizadas",
+    message: "Hola! Me interesa encargar una torta personalizada en SugarBloom. Tengo algunas ideas y quisiera saber si pueden ayudarme a crearlas."
   },
   {
     image: "/gallery4.jpeg",
@@ -30,6 +33,8 @@ const products = [
     description: "Presentaciones elegantes con capas irresistibles y mucho sabor.",
     price: "Desde $150.000",
     alt: "Postres en shot",
+    message: "Hola! Estoy interesado en los postres en shot de SugarBloom. ¿Me puedes contar qué sabores o combinaciones tienen?"
+
   },
   {
     image: "/gallery5.jpeg",
@@ -37,6 +42,7 @@ const products = [
     description: "Pequeños, encantadores y con todo el sabor que esperas de una buena torta.",
     price: "Desde $35.000",
     alt: "Cupcakes",
+    message: "Hola! Me gustaría pedir cupcakes en SugarBloom. ¿Qué sabores tienen?"
   },
   {
     image: "/gallery6.jpeg",
@@ -44,6 +50,7 @@ const products = [
     description: "Base crujiente, rellenos cremosos y sabores que encantan en cada bocado.",
     price: "Desde $2.500 c/u",
     alt: "Pies",
+    message: "Hola! Me interesa hacer un pedido de pie en SugarBloom y me gustaría saber qué sabores tienen disponibles."
   },
 ]
 ---
@@ -75,8 +82,10 @@ const products = [
           image={product.image}
           title={product.title}
           description={product.description}
-          price={product.price}
           alt={product.alt}
+          price={product.price}
+          message={product.message}
+          
         />
       ))}
     </div>

@@ -5,9 +5,10 @@ export interface Props {
   description: string
   price?: string
   alt?: string
+  message?: string
 }
 
-const { image, title, description, price, alt } = Astro.props
+const { image, title, description, price, alt, message } = Astro.props
 ---
 
 <div
@@ -39,9 +40,11 @@ const { image, title, description, price, alt } = Astro.props
       {description}
     </p>
 
+    {price && <p class="text-pink-500 font-medium">{price}</p>}
+
     <div class="pt-2">
       <a 
-        href={`https://wa.me/584126539866?text=Hola,%20me%20interesa%20pedir%20${encodeURIComponent(title)}`}
+      href={`https://wa.me/4126539866?text=${encodeURIComponent(message || `Hola, me interesa pedir ${title}`)}`}
         class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300"
         target="_blank"
         rel="noopener noreferrer"
